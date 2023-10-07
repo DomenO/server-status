@@ -6,9 +6,9 @@
     "start": "bun --watch run src/main.ts",
     "start:prod": "bun run src/main.ts",
     "start:mariadb": "docker run --restart always -d --name mariadb --env MARIADB_ROOT_PASSWORD=12345 -v $PWD/mariadb:/var/lib/mysql -p 3306:3306 mariadb:latest",
-    "docker:build": "docker build --platform linux/amd64 -t domenoo/server-status:latest -f Dockerfile .",
-    "docker:save": "docker save -o server-status-latest.tar domenoo/server-status:latest",
-    "docker:run": "docker run --restart always --name server-status -d -p 35622:35622 -v $PWD/.env:/app/.env domenoo/server-status:latest",
+    "docker:build": "docker build --platform linux/amd64 -t server-status:latest -f Dockerfile .",
+    "docker:save": "docker save -o server-status-latest.tar server-status:latest",
+    "docker:run": "docker run --restart always --name server-status -d -p 35622:35622 -v $PWD/.env:/app/.env server-status:latest",
     "release:docker": "bun docker:build & bun docker:save"
   },
   "devDependencies": {
