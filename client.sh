@@ -3,6 +3,10 @@
 # Run background
 # nohup ./client.sh &> /dev/null &
 
+# Autorun
+# crontab -e
+# @reboot ~/client.sh
+
 SERVER="127.0.0.1"
 PORT=35622
 NAME="ServerName"
